@@ -1,0 +1,14 @@
+action: py36, msg: installpkg
+cwd: /home/lekocrod/Projects/pys3
+cmd: /home/lekocrod/Projects/pys3/.tox/py36/bin/python -m pip install --no-deps -U .tox/.tmp/package/1/pys3-0.0.0.zip
+Processing ./.tox/.tmp/package/1/pys3-0.0.0.zip
+Building wheels for collected packages: pys3
+  Building wheel for pys3 (setup.py): started
+  Building wheel for pys3 (setup.py): finished with status 'done'
+  Stored in directory: /home/lekocrod/.cache/pip/wheels/c6/ee/71/78e153b651969bdc28cc934fb2617e0173d22ec0811e03299e
+Successfully built pys3
+Installing collected packages: pys3
+  Found existing installation: pys3 0.0.0
+    Not uninstalling pys3 at /home/lekocrod/Projects/pys3, outside environment /home/lekocrod/Projects/pys3/.tox/py36
+    Can't uninstall 'pys3'. No files were found to uninstall.
+Successfully installed pys3-0.0.0

@@ -1,0 +1,10 @@
+action: py36, msg: getenv
+cwd: /home/lekocrod/Projects/pys3/.tox
+cmd: /home/lekocrod/.local/share/virtualenvs/pys3-Ovr6EE8F/bin/python3.6 -m virtualenv --python /home/lekocrod/.local/share/virtualenvs/pys3-Ovr6EE8F/bin/python3.6 py36
+Already using interpreter /home/lekocrod/.local/share/virtualenvs/pys3-Ovr6EE8F/bin/python3.6
+Using real prefix '/usr'
+Path not in prefix '/home/lekocrod/.local/share/virtualenvs/pys3-Ovr6EE8F/include/python3.6m' '/usr'
+New python executable in /home/lekocrod/Projects/pys3/.tox/py36/bin/python3.6
+Also creating executable in /home/lekocrod/Projects/pys3/.tox/py36/bin/python
+Installing setuptools, pip, wheel...
+done.
