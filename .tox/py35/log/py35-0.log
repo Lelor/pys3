@@ -1,9 +1,0 @@
-action: py35, msg: getenv
-cwd: /home/lekocrod/Projects/pys3/.tox
-cmd: /home/lekocrod/.local/share/virtualenvs/pys3-Ovr6EE8F/bin/python3.6 -m virtualenv --python /usr/bin/python3.5 py35
-Running virtualenv with interpreter /usr/bin/python3.5
-Using base prefix '/usr'
-New python executable in /home/lekocrod/Projects/pys3/.tox/py35/bin/python3.5
-Also creating executable in /home/lekocrod/Projects/pys3/.tox/py35/bin/python
-Installing setuptools, pip, wheel...
-done.

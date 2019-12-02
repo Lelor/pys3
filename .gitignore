@@ -2,3 +2,6 @@
 unittestsreport.xml
 pys3.egg-info
 .coverage
+*.pyc
+.tox
+*__pycache__*
