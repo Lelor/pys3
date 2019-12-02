@@ -1,12 +1,22 @@
 import os
 
+from boto3 import Session
+from exc import ArgumentError
 from interface.helper import (get_md5_recursively, file_md5, directory_files_recursively,
                               get_files_to_delete, remove_text)
 
 
 class S3Interface:
-    def __init__(self, s3):
-        self.s3 = s3
+    def __init__(self, profile=None, access_key=None, secret_key=None):
+        if profile:
+            self.session = Session(profile_name=profile)
+            self.s3 = self.session.client('s3')
+        elif not secret_key or access_key:
+            raise ArgumentError('Invalid "secret_key" or "access_key"')
+        else:
+            self.session = Session(aws_access_key_id=access_key,
+                                   aws_secret_access_key=secret_key)
+            self.s3 = self.session.client('s3')
 
     def delete_removed_files(self, local_path: str, bucket_name: str):
         """
