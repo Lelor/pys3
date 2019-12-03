@@ -8,6 +8,17 @@ from interface.helper import (get_md5_recursively, file_md5, directory_files_rec
 
 class S3Interface:
     def __init__(self, profile=None, access_key=None, secret_key=None):
+        """
+        Initializes the interface with either a profile on the default
+        aws credentials file path or the credentials
+        Args:
+            str profile:
+                profile name on the aws credentials file
+            str access_key:
+                aws credential
+            str secret_key:
+                aws credential
+        """
         if profile:
             self.session = Session(profile_name=profile)
             self.s3 = self.session.client('s3')

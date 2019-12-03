@@ -11,8 +11,7 @@ from boto3 import client as boto3_client
 class TestRemoteActions(TestCase):
 
     def setUp(self):
-        self.s3 = boto3_client('s3')
-        self.bucket_name = 'test2207'
+        self.bucket_name = 'test'
         self.local_path = 'tests'
         if 'tmp' not in os.listdir():
             os.mkdir('tmp')
@@ -24,21 +23,21 @@ class TestRemoteActions(TestCase):
 
     @patch('interface.remote_actions.Session')
     def test_retrieve_file_info_from_bucket(self, patched_session):
-        interface = S3Interface(self.s3)
+        interface = S3Interface('test')
         with patch.object(interface.s3, 'list_objects', return_value={'Contents': ['test1', 'test2', 'test3']}):
             retrieved_files = interface.get_remote_files(self.bucket_name)
             self.assertEqual(['test1', 'test2', 'test3'], retrieved_files)
 
     @patch('interface.remote_actions.Session')    
     def test_delete_file_from_bucket(self, patched_session):
-        interface = S3Interface(self.s3)
+        interface = S3Interface('test')
         with patch.object(interface.s3, 'delete_objects', return_value={'Deleted': ['test1']}):
             deleted_files = interface.delete_aws_files([{'Key': 'test1'}], self.bucket_name)
             self.assertEqual(['test1'], deleted_files)
 
     @patch('interface.remote_actions.Session')
     def test_get_only_different_files(self, patched_session):
-        interface = S3Interface(self.s3)
+        interface = S3Interface('test')
         with patch.object(interface.s3, 
                           'list_objects',
                           return_value={'Contents':
